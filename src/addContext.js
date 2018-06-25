@@ -13,16 +13,16 @@ class ContextProvider extends Component {
   changeTodo = (todo) => {
     let { todoList } = this.state;
     todoList = [...todoList, todo]
-    debugger
-    this.setState = ({
-      todoList
+    this.setState({
+      todoList: todoList
     })
   }
   render() {
+    let { todoList } = this.state;
     return (
       <todoContext.Provider
         value={{
-          todoList: this.state.todoList,
+          todoList: todoList,
           onChange: this.changeTodo
         }}
       >
